@@ -3,17 +3,18 @@
 ## Step 1: Concrete Examples
 
 **User triggers:**
+- "Help me cancel subscriptions"
 - "Audit my subscriptions"
 - "Find recurring charges in my transactions"
-- "Help me cancel subscriptions"
 - "What subscriptions am I paying for?"
 
 **Workflow:**
 1. User provides transaction CSVs (Apple Card, Chase, etc.)
 2. Claude analyzes for recurring patterns
-3. Generates interactive HTML audit with categories
-4. User reviews and marks items to cancel
-5. Claude executes cancellations via browser automation
+3. Claude asks questions to categorize (cancel vs keep)
+4. Generates interactive HTML audit
+5. User checks items to cancel, copies list
+6. Claude executes cancellations via browser automation
 
 ## Step 2: Reusable Skill Contents
 
@@ -44,13 +45,13 @@ just-fucking-cancel/
 
 1. **Input flexibility**: Support multiple bank formats (Apple Card, Chase, generic CSV)
 2. **Privacy-first**: All data stays local, never uploaded
-3. **Interactive output**: HTML with checkboxes, floating copy button, localStorage persistence
+3. **Interactive output**: HTML with checkboxes, floating copy button
 4. **Browser automation**: Leverage Claude Code's MCP tools for cancellations
 
 ## Status
 
 - [x] Plan created
-- [x] HTML template finalized (brutalist design)
+- [x] HTML template finalized
 - [ ] Skill initialized
 - [ ] Scripts implemented
 - [ ] References written

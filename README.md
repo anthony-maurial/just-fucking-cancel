@@ -1,6 +1,6 @@
 # just-fucking-cancel
 
-Analyze your bank transactions to find recurring charges, categorize them, and cancel what you don't need.
+Analyze your bank transactions to find recurring charges, categorize them, and just fucking cancel what you don't need.
 
 ![just-fucking-cancel output](cancel-preview.png)
 
@@ -13,7 +13,7 @@ Analyze your bank transactions to find recurring charges, categorize them, and c
 
 ## Privacy
 
-**Your data stays on your computer.** This tool runs entirely through Claude Code on your local machine. Your transaction data is:
+**Your data stays on your computer.** This runs entirely through Claude Code on your local machine. Your transaction data is:
 - Never uploaded to any server
 - Never shared with the skill author
 - Only processed locally by Claude on your device
@@ -32,7 +32,7 @@ The generated HTML audit also stays local - share only if you choose to.
 claude
 
 # Then tell Claude:
-"Audit my subscriptions"
+"Help me cancel subscriptions"
 
 # Drop your transaction CSV when prompted
 ```
@@ -41,7 +41,7 @@ Claude will ask clarifying questions about your usage patterns, then generate an
 
 ## Output Features
 
-- **Copy to clipboard** - Select items, click floating button to copy cancel list
+- **Floating copy button** - Check items, copy list, paste to Claude to cancel
 - **Privacy toggle** - Blur service names with one click
 - **Collapsible sections** - Click headers to collapse/expand
 - **Categorized view** - Cancelled, Needs Decision, Keeping
