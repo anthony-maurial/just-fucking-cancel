@@ -1,260 +1,247 @@
 # Getting Started
 
-Never written a line of code? Perfect. This guide assumes nothing and gets you from zero to watching Claude automatically cancel your subscriptions in about 10 minutes.
+Never used a terminal before? This guide assumes nothing and gets you from zero to watching Claude cancel your subscriptions in about 15 minutes.
 
 ## What You're About to Do
 
-1. **Download this project** from GitHub (2 min)
-2. **Install Claude Code** - a tool that lets an AI work on your computer (3 min)
-3. **Export your transactions** from your bank as a spreadsheet (2 min)
-4. **Run the audit** - Claude analyzes your spending and asks what to cancel (3 min)
-5. **Watch the magic** - Claude opens Chrome and cancels subscriptions for you
+1. **Install Claude Code** — An AI tool that works directly on your computer (5 min)
+2. **Download this project** — Get the skill onto your machine (2 min)
+3. **Export your transactions** — Get a CSV from your bank (3 min)
+4. **Run the audit** — Claude analyzes everything and asks what to cancel (5 min)
+5. **Watch the magic** — Claude opens Chrome and cancels things for you
 
-No coding required. You'll type a few commands, but I'll show you exactly what to type.
-
----
-
-## Step 1: Download This Project
-
-You're on GitHub right now. GitHub is just a website where people share projects. Let's get this one onto your computer.
-
-1. Look for the green **"Code"** button near the top of this page
-2. Click it → Click **"Download ZIP"**
-3. Find the downloaded file (probably in your Downloads folder)
-4. Double-click to unzip it
-5. You now have a folder called `just-fucking-cancel-main` - drag it somewhere easy to find (like your Desktop)
-
-✅ **You now have the project on your computer.**
+No coding required. You'll type a few commands, but I'll tell you exactly what to type.
 
 ---
 
-## Step 2: Install Claude Code
+## Step 1: Install Claude Code
 
 Claude Code is a tool that lets Claude (the AI) work directly with files on your computer and control your browser.
 
-### What You'll Need
-- **A Claude Pro subscription** ($20/month) - [Get it here](https://claude.ai/settings/billing)
-- About 5 minutes for installation
+### What You Need First
 
-### Mac Installation
+- **A Claude Pro subscription** — $20/month at [claude.ai](https://claude.ai)
+- **A computer** — Mac, Windows, or Linux
+
+### Mac
 
 1. **Open Terminal**
-   - Press `Cmd + Space` (opens Spotlight search)
-   - Type `Terminal`
-   - Press Enter
-   - A window with a black or white background and blinking cursor appears. This is Terminal.
+   - Press `Cmd + Space` (opens Spotlight)
+   - Type `Terminal` and press Enter
+   - A window appears with a blinking cursor — this is Terminal
 
 2. **Install Claude Code**
    
-   Copy this entire line and paste it into Terminal, then press Enter:
+   Copy this line, paste it into Terminal, and press Enter:
    ```
-   curl -fsSL https://claude.ai/install-cli | sh
+   npm install -g @anthropic-ai/claude-code
    ```
    
-   Wait for it to finish (you'll see text scrolling, then it stops).
+   Don't have npm? Install Node.js first from [nodejs.org](https://nodejs.org) (choose the LTS version), then run the command above.
 
-3. **Restart Terminal**
-   - Close the Terminal window
-   - Open Terminal again (same way as before)
+3. **Verify it worked**
+   ```
+   claude --version
+   ```
+   You should see a version number. If you see "command not found," close Terminal and open it again.
 
-### Windows Installation
+### Windows
 
 1. **Open PowerShell**
    - Press the Windows key
-   - Type `PowerShell`
-   - Click "Windows PowerShell"
+   - Type `PowerShell` and click it
 
 2. **Install Claude Code**
-   
-   Copy this entire line and paste it into PowerShell, then press Enter:
    ```
-   irm https://claude.ai/install-cli.ps1 | iex
+   npm install -g @anthropic-ai/claude-code
    ```
    
-   Wait for it to finish.
+   Don't have npm? Install Node.js first from [nodejs.org](https://nodejs.org) (choose the LTS version), then run the command above.
 
-3. **Restart PowerShell**
-   - Close the window
-   - Open PowerShell again
-
-### Verify It Worked
-
-In your Terminal/PowerShell, type:
-```
-claude --version
-```
-
-If you see a version number, you're good! If you see "command not found," restart your computer and try again.
+3. **Verify it worked**
+   ```
+   claude --version
+   ```
 
 ✅ **Claude Code is installed.**
 
 ---
 
+## Step 2: Download This Project
+
+You need to get this skill onto your computer.
+
+### Option A: Download ZIP (easiest)
+
+1. Go to this project's GitHub page
+2. Click the green **Code** button
+3. Click **Download ZIP**
+4. Unzip it (double-click the downloaded file)
+5. Move the folder somewhere easy to find — like your Desktop
+
+### Option B: Clone with Git (if you know Git)
+
+```bash
+git clone https://github.com/your-username/just-fucking-cancel.git
+```
+
+✅ **You have the skill on your computer.**
+
+---
+
 ## Step 3: Export Your Bank Transactions
 
-You need a CSV file (a type of spreadsheet) with your recent transactions.
+You need a CSV file with your recent transactions. Most banks let you export this.
 
 ### Apple Card
-1. Open the **Wallet** app on your iPhone
-2. Tap your **Apple Card**
-3. Scroll down and tap **Card Balance**
+
+1. Open **Wallet** app on your iPhone
+2. Tap **Apple Card**
+3. Scroll down → tap **Card Balance**
 4. Tap the **...** menu → **Export Transactions**
 5. Choose **Last 12 Months** and **CSV**
-6. Send it to yourself (AirDrop, email, etc.) and save to your computer
+6. Send it to yourself (AirDrop, email, iCloud) and save to your computer
 
 ### Chase
-1. Log in at chase.com
+
+1. Log in at [chase.com](https://chase.com)
 2. Click your account
-3. Look for **Download account activity** (usually a download icon)
-4. Select date range (last 12 months ideal)
+3. Find **Download account activity** (usually a download icon)
+4. Select date range — last 12 months is ideal
 5. Choose **CSV** format
-6. Save the file
 
 ### Other Banks
-Look for "Export," "Download," or "Download transactions" in your account. Choose CSV format (not PDF or Excel).
 
-**Save your CSV file(s) into the `just-fucking-cancel-main` folder** you downloaded earlier.
+Look for "Export," "Download," or "Download transactions" in your account settings. Choose CSV format (not PDF or Excel).
 
-✅ **You have your transaction data ready.**
+**Move your CSV file(s) into the project folder** you downloaded in Step 2.
+
+✅ **Transaction data ready.**
 
 ---
 
 ## Step 4: Run the Subscription Audit
 
-Now the fun part. You're going to navigate to your project folder and start Claude.
+Now the fun part.
 
-### Mac
+### Navigate to the project folder
 
-1. **Open Terminal** (Cmd + Space → "Terminal" → Enter)
+**Mac:**
+```bash
+cd ~/Desktop/just-fucking-cancel-main
+```
 
-2. **Navigate to your project folder**
-   
-   If you put the folder on your Desktop, type this and press Enter:
-   ```
-   cd ~/Desktop/just-fucking-cancel-main
-   ```
-   
-   (If you put it somewhere else, type `cd ` then drag the folder into Terminal - it will paste the path)
+**Windows:**
+```powershell
+cd $HOME\Desktop\just-fucking-cancel-main
+```
 
-3. **Start Claude Code**
-   ```
-   claude
-   ```
-   
-   The first time, it will ask you to log in. Follow the prompts.
+(If you put it somewhere else, type `cd ` then drag the folder into Terminal — it pastes the path)
 
-### Windows
+### Start Claude Code
 
-1. **Open PowerShell**
+```bash
+claude
+```
 
-2. **Navigate to your project folder**
-   
-   If you put the folder on your Desktop, type:
-   ```
-   cd $HOME\Desktop\just-fucking-cancel-main
-   ```
+The first time, it asks you to log in. Follow the prompts.
 
-3. **Start Claude Code**
-   ```
-   claude
-   ```
+### Tell Claude what you want
 
-### Tell Claude What to Do
-
-Once Claude is running, you'll see a prompt where you can type. Say:
+Once Claude is running, type:
 
 ```
 Audit my subscriptions. I have transaction CSVs in this folder.
 ```
 
-**What happens next:**
+### What happens next
+
 - Claude reads your transaction files
-- Claude identifies recurring charges (Netflix, Spotify, gym memberships, etc.)
-- Claude asks you questions: "Do you use Hulu?" "When did you last use Adobe?"
-- You answer honestly
-- Claude generates a beautiful HTML report showing what to cancel
+- Claude finds recurring charges (Netflix, Spotify, random SaaS, that gym...)
+- **Claude asks you questions:** "Do you use Hulu?" "When did you last use Adobe?"
+- You answer honestly — this is where the "wait, I forgot about that" moments happen
+- Claude generates a beautiful HTML report
 
-**To see your report:** Claude will create an HTML file. Double-click it to open in your browser.
+**To view your report:** Claude creates an HTML file. Double-click it to open in your browser.
 
-✅ **You've audited your subscriptions.**
-
----
-
-## Step 5: Let Claude Cancel For You (The Magic Part)
-
-This is where it gets wild. Claude can actually open Chrome and cancel subscriptions for you.
-
-### Enable Browser Control
-
-1. In the same Claude session, type:
-   ```
-   /permissions
-   ```
-
-2. Enable **Browser** permissions when prompted
-
-3. Then tell Claude:
-   ```
-   Help me cancel the subscriptions I marked for cancellation. Open Chrome and walk me through each one.
-   ```
-
-### What You'll See
-
-- Claude opens Chrome automatically
-- Navigates to Netflix.com (or wherever)
-- Clicks through the cancellation flow
-- Asks for your confirmation before final steps
-- Moves to the next subscription
-
-You can watch, intervene, or let it run. You're always in control.
+✅ **Audit complete.**
 
 ---
 
-## Privacy & Security
+## Step 5: Let Claude Cancel For You
 
-**Your transaction data stays on your computer.** 
+This is the magic part. Claude can open Chrome and cancel subscriptions for you.
 
-- Your CSV files never leave your machine
-- Claude processes everything locally
-- The generated audit report is a local HTML file
-- Nothing is uploaded to any server
+### Enable browser control
 
-The only data that goes to Anthropic (Claude's company) is your conversation with Claude - not your raw transaction data.
+In your Claude session, type:
+```
+/mcp
+```
+
+Make sure browser tools are enabled. Then say:
+
+```
+Help me cancel the subscriptions I marked for cancellation.
+```
+
+### What you'll see
+
+- Chrome opens automatically
+- Claude navigates to Netflix (or wherever)
+- Claude clicks through the cancellation flow
+- Claude asks for your confirmation before final steps
+- Moves to the next service
+
+You're watching the whole time. Intervene whenever you want.
+
+### When sites require login
+
+That's normal. Log in yourself, then tell Claude to continue. Claude doesn't know your passwords (and shouldn't).
+
+---
+
+## Privacy
+
+**Your transaction data stays on your computer.**
+
+- CSV files never leave your machine
+- The audit report is a local HTML file
+- Nothing is uploaded anywhere
+- Nothing is shared with the skill author
+
+The only data that goes to Anthropic is your conversation with Claude — not your raw transaction files.
 
 ---
 
 ## Troubleshooting
 
 ### "claude: command not found"
-- Make sure you restarted Terminal/PowerShell after installing
-- Try restarting your computer
-- Run the installation command again
-
-### "Permission denied" (Mac)
-- Go to System Preferences → Privacy & Security
-- Look for Claude Code and allow it
+- Close Terminal/PowerShell and reopen it
+- Make sure Node.js is installed: run `node --version`
+- Try reinstalling: `npm install -g @anthropic-ai/claude-code`
 
 ### Claude can't find my CSV
-- Make sure the CSV file is in the `just-fucking-cancel-main` folder
-- Make sure it's actually a `.csv` file (not `.xlsx` or `.pdf`)
+- Make sure it's in the project folder
+- Make sure it's a `.csv` file (not `.xlsx` or `.pdf`)
 
-### Browser control isn't working
-- Make sure Chrome is installed (not Safari, Firefox, etc.)
+### Browser automation not working
+- Make sure Chrome is installed (not just Safari or Firefox)
 - Try closing all Chrome windows first
-- Grant permissions when Claude asks
+- Check `/mcp` permissions in Claude
 
-### "I need to log in" when Claude opens a site
-- That's normal! Log in yourself, then tell Claude to continue
-- Claude can't (and shouldn't) know your passwords
+### Need to log in when Claude opens a site
+- That's expected! Log in yourself, then tell Claude "continue"
+- Claude doesn't store or access your passwords
 
 ---
 
 ## Cost
 
-- **Claude Pro subscription**: $20/month ([sign up](https://claude.ai))
-- **This project**: Free
+- **Claude Pro**: $20/month — [claude.ai](https://claude.ai)
+- **This skill**: Free
 
-You can cancel Claude Pro anytime after you've cleaned up your subscriptions. One month is usually enough.
+One month is usually enough to audit and clean up everything. Then cancel Claude Pro if you want.
 
 ---
 

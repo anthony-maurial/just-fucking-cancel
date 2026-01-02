@@ -11,3 +11,6 @@ subscription-audit.html
 # Claude settings (except skills)
 .claude/*
 !.claude/skills/
+
+# Internal planning docs
+skill-plan.md
