@@ -40,32 +40,49 @@
       color: var(--text);
     }
 
-    /* SHARE CARD - Screenshot ready */
-    .share-card {
-      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-      color: white;
-      padding: 2rem 2.5rem;
-      border-radius: 16px;
+    /* AUDIT SUMMARY - Functional output style */
+    .audit-summary {
+      border: 1px solid var(--border);
+      border-radius: 8px;
       margin: 0 0 2rem 0;
-      text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      overflow: hidden;
     }
-    .share-card h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      margin: 0 0 0.25rem 0;
-      letter-spacing: -1px;
+    .summary-stat {
+      display: flex;
+      align-items: baseline;
+      padding: 0.875rem 1rem;
+      border-bottom: 1px solid var(--border);
+      gap: 1rem;
     }
-    .share-card .subtitle {
+    .summary-stat:last-child {
+      border-bottom: none;
+    }
+    .summary-stat.stat-savings {
+      border-left: 4px solid var(--keep);
+      background: color-mix(in srgb, var(--keep) 8%, var(--bg));
+    }
+    .summary-stat.stat-cancelled {
+      border-left: 4px solid #666;
+    }
+    .summary-stat.stat-pending {
+      border-left: 4px solid var(--investigate);
+    }
+    .summary-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--muted);
+      min-width: 80px;
+    }
+    .summary-value {
+      font-family: monospace;
       font-size: 1.25rem;
-      opacity: 0.9;
-      margin: 0;
-      font-weight: 500;
+      font-weight: 600;
     }
-    .share-card .annual {
-      font-size: 1rem;
-      opacity: 0.7;
-      margin-top: 0.5rem;
+    .summary-detail {
+      font-family: monospace;
+      font-size: 0.875rem;
+      color: var(--muted);
     }
 
     /* Rest of page header */
@@ -213,11 +230,21 @@
 </head>
 <body>
 
-<!-- SHARE CARD - Update totals after analysis -->
-<div class="share-card">
-  <h1>$XXX/mo saved</h1>
-  <p class="subtitle">Cancelled N subscriptions</p>
-  <p class="annual">$X,XXX per year</p>
+<!-- AUDIT SUMMARY - Update values after analysis -->
+<div class="audit-summary">
+  <div class="summary-stat stat-savings">
+    <span class="summary-label">Saving</span>
+    <span class="summary-value">$X,XXX/mo</span>
+    <span class="summary-detail">$XX,XXX/yr</span>
+  </div>
+  <div class="summary-stat stat-cancelled">
+    <span class="summary-label">Cancelled</span>
+    <span class="summary-value">N subscriptions</span>
+  </div>
+  <div class="summary-stat stat-pending">
+    <span class="summary-label">Reviewed</span>
+    <span class="summary-value">N transactions</span>
+  </div>
 </div>
 
 <p class="page-meta">

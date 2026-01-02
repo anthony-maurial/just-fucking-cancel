@@ -31,7 +31,10 @@ Ask in batches of 5-10 to avoid overwhelming.
 
 ### 4. Generate HTML Audit
 Copy [template.html](assets/template.html) and populate:
-- Update share card totals (monthly saved, count, annual)
+- Update audit summary stats:
+  - Saving: monthly and yearly amounts
+  - Cancelled: number of subscriptions cancelled
+  - Reviewed: total transactions analyzed
 - Add rows to appropriate sections (cancelled/investigate/keep)
 - Include notes from user responses
 
