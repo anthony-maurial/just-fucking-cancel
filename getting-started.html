@@ -862,15 +862,17 @@ const updateProgress = (stepNum) => {
 
 // Scroll to step when clicking progress bar
 function scrollToStep(num) {
-  const step = document.getElementById('step-' + num);
-  if (step) {
-    isScrolling = true;
-    updateProgress(num);
-    // Use instant scroll - smooth gets blocked by long tasks
-    const y = step.getBoundingClientRect().top + window.pageYOffset - 80;
-    window.scrollTo(0, y);
-    setTimeout(() => { isScrolling = false; }, 100);
-  }
+  // Defer everything to avoid blocking click handler
+  setTimeout(() => {
+    const step = document.getElementById('step-' + num);
+    if (step) {
+      isScrolling = true;
+      updateProgress(num);
+      const y = step.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo(0, y);
+      setTimeout(() => { isScrolling = false; }, 100);
+    }
+  }, 0);
 }
 
 // Tab switching
